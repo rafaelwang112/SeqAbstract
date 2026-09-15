@@ -1,0 +1,13 @@
+module acc_unit (
+    input  logic        clk,
+    input  logic        rst_n,
+    input  logic [7:0]  delta,
+    output logic [15:0] acc
+);
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            acc <= 16'd0;
+        else
+            acc <= acc + {8'd0, delta};
+    end
+endmodule

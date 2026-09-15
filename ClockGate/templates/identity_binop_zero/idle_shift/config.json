@@ -1,0 +1,23 @@
+{
+  "name": "idle_shift",
+  "family": "identity_binop_zero",
+  "hide_one_liner": "Flop always does q<<amt; shift by 0 does not change q but still clocks.",
+  "cheat_kind": "wrong_predicate",
+  "instance_busy_range": [0.05, 0.40],
+  "top": "shf_unit",
+  "files": {
+    "waste": "shf_waste.sv",
+    "gold": "shf_gated.sv",
+    "cheat": "shf_broken.sv",
+    "tb": "tb_shf.sv"
+  },
+  "vcd": {
+    "clk": "clk",
+    "rst_n": "rst_n",
+    "busy": "amt",
+    "busy_nonzero": true,
+    "data": "q"
+  },
+  "waste_forbidden_substrings": ["if (amt"],
+  "min_savings": 0.5
+}

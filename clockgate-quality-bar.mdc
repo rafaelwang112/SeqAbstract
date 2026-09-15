@@ -1,0 +1,25 @@
+---
+description: Never weaken ClockGate paper-quality / grader bars to make a template pass
+alwaysApply: true
+---
+
+# Quality bar stays hard
+
+The grader exists to reject weak templates. Do not change the bar so a template can print PAPER QUALITY OK.
+
+Layout: `templates/<hide>/<costume>/`. Paper count = hide folders, not costumes.
+
+If a costume fails uniqueness, hide class, cheat strength, or any other paper-quality check:
+
+- Change the **hide** (new folder + real RTL + real cheat), **or**
+- Leave it **failing**, **or**
+- Put it under the **existing hide folder** if it is the same class in a different costume.
+
+Never:
+
+- Add skip flags / looser uniqueness so a new hide folder can clone another hide
+- Relax `cheat_kind`, savings, or family rules because RTL is not ready
+- Rename `family` without actually changing the hide
+- Count a second costume (`idle_shift`) as a second hide
+
+`config.family` must equal the hide folder name. Costumes of one hide share that family. Shift-of-add-0 stays under `identity_binop_zero/`.

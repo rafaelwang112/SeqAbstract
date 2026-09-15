@@ -1,0 +1,23 @@
+{
+  "name": "buried_enable",
+  "family": "identity_binop_zero",
+  "hide_one_liner": "Flop always does acc+delta; adding 0 does not change acc but still clocks.",
+  "cheat_kind": "wrong_predicate",
+  "instance_busy_range": [0.05, 0.40],
+  "top": "acc_unit",
+  "files": {
+    "waste": "acc_waste.sv",
+    "gold": "acc_gated.sv",
+    "cheat": "acc_broken.sv",
+    "tb": "tb_acc.sv"
+  },
+  "vcd": {
+    "clk": "clk",
+    "rst_n": "rst_n",
+    "busy": "delta",
+    "busy_nonzero": true,
+    "data": "acc"
+  },
+  "waste_forbidden_substrings": ["if (delta"],
+  "min_savings": 0.5
+}

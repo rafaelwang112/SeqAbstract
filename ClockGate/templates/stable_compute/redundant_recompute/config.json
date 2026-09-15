@@ -1,0 +1,23 @@
+{
+  "name": "redundant_recompute",
+  "family": "stable_compute",
+  "hide_one_liner": "Flop always stores a*b; when a and b are unchanged the product already sits in p but still clocks.",
+  "cheat_kind": "wrong_predicate",
+  "instance_busy_range": [0.05, 0.40],
+  "top": "mul_unit",
+  "files": {
+    "waste": "mul_waste.sv",
+    "gold": "mul_gated.sv",
+    "cheat": "mul_broken.sv",
+    "tb": "tb_mul.sv"
+  },
+  "vcd": {
+    "clk": "clk",
+    "rst_n": "rst_n",
+    "busy": "chg",
+    "busy_nonzero": true,
+    "data": "p"
+  },
+  "waste_forbidden_substrings": ["if (a", "if (b", "!= p"],
+  "min_savings": 0.5
+}
